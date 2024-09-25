@@ -17,7 +17,7 @@ st.write(df)
 fig, ax = plt.subplots(1, 3, figsize=(15, 5))
 for i, pclass in enumerate(sorted(df['Pclass'].unique()), start=0):
     df[df['Pclass'] == pclass].boxplot(column='Fare', ax=ax[i])
-    ax[i].xlabel(f'PClass = {pclass}')
-    ax[i].ylabel('Fare')
+    ax[i].set_xlabel(f'PClass = {pclass}')
+    ax[i].set_ylabel('Fare')
 
 st.pyplot(fig)
