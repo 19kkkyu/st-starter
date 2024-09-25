@@ -14,10 +14,8 @@ st.write(df)
 # show the box plot for ticket price with different classes
 # you need to set the x labels and y labels
 # a sample diagram is shown below
-
 fig, ax = plt.subplot(1, 3, figsize=(15, 5))
 for i, pclass in enumerate(sorted(df['Pclass'].unique()), start=0):
-    fig, ax = plt.subplot(1, 3, i)
     df[df['Pclass'] == pclass].boxplot(column='Fare', ax=ax[i])
     ax[i].xlabel(f'PClass = {pclass}')
     ax[i].ylabel('Fare')
