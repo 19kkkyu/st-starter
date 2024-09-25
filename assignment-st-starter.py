@@ -15,12 +15,11 @@ st.write(df)
 # you need to set the x labels and y labels
 # a sample diagram is shown below
 
-plt.figure(figsize=(15, 5))
-
+fig, ax = plt.subplot(1, 3, figsize=(15, 5))
 for i, pclass in enumerate(sorted(df['Pclass'].unique()), start=1):
     fig, ax = plt.subplot(1, 3, i)
     df[df['Pclass'] == pclass].boxplot(column='Fare', ax=ax)
-    plt.xlabel(f'PClass = {pclass}')
-    plt.ylabel('Fare')
-    st.pyplot(fig)
+    ax.xlabel(f'PClass = {pclass}')
+    ax.ylabel('Fare')
 
+st.pyplot(fig)
